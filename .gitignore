@@ -1,0 +1,10 @@
+# from webm to mp4
+*.webm
+*.mp4
+
+# from mp4 to gif
+*.mp4
+*.gif
+
+venv/
+# add more as we grow

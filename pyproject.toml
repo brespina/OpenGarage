@@ -1,0 +1,100 @@
+[tool.poetry]
+name = "OpenGarage"
+version = "0.1.0"
+description = "A collection of free and open-source tools for common tasks"
+authors = ["Brandon Espina <brandon.r.espina@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/brespina/OpenGarage"
+keywords = ["testing", "linting", "losing my mind"]
+# requires-python = ">=3.9"
+package-mode = false  # THIS WAS WHAT TOOK ME 7 HOURSSSSSSSS!
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "24.10.0"
+flake8 = "7.1.1"
+isort = "5.12.0"
+pre-commit = "4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# [project]
+# name = "OpenGarage"
+# version = "0.1.0"
+# description = "A collection of free and open-source tools for common tasks"
+# authors = [{ name = "Brandon Espina", email = "brandon.r.espina@gmail.com" }]
+# license = { file = "LICENSE" }
+# readme = "README.md"
+# requires-python = ">=3.9"
+# keywords = ["testing", "linting", "file conversion", "automation"]
+
+# [tool.poetry.dependencies]
+# python = "^3.9"
+
+# [tool.poetry.dev-dependencies]
+# black = "24.10.0"
+# flake8 = "7.1.1"
+# isort = "5.12.0"
+# pre-commit = "4.0.1"
+
+# [tool.black]
+# line-length = 88
+# skip-magic-trailing-comma = false
+# skip-string-normalization = false
+# target-version = ["py39"]
+# include = '\.pyi?$'
+# extend-exclude = '''
+# /(
+#   \.eggs
+#   | \.git
+#   | \.hg
+#   | \.mypy_cache
+#   | \.tox
+#   | \.venv
+#   | build
+#   | dist
+# )/
+# '''
+
+# [tool.flake8]
+# max-line-length = 88
+# extend-ignore = ["E203", "E266", "E501", "W503"]
+# max-complexity = 18
+# select = ["B", "C", "E", "F", "W", "T4", "B9"]
+
+# [tool.isort]
+# profile = "black"
+# line_length = 88
+# multi_line_output = 3
+# include_trailing_comma = true
+# force_grid_wrap = 0
+# use_parentheses = true
+# ensure_newline_before_comments = true
+
+# [tool.pre-commit]
+# repos = [
+#     { repo = "https://github.com/pre-commit/pre-commit-hooks", rev = "v5.0.0" },
+#     { repo = "https://github.com/psf/black", rev = "24.10.0" },
+#     { repo = "https://github.com/pycqa/flake8", rev = "7.1.1" },
+#     { repo = "https://github.com/pycqa/isort", rev = "5.12.0" }
+# ]

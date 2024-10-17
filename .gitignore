@@ -8,3 +8,10 @@
 
 venv/
 # add more as we grow
+.vscode/
+
+*.exe
+*/*.exe
+
+__pycache__/
+*/__pycache__/

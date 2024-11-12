@@ -4,6 +4,7 @@ import threading
 from time import time
 
 
+#testing black formatter and fast8 linterjehhehehehehehfjhewalifulhauejea
 class ThreadData:
     def __init__(self, input_str):
         self.input_str = input_str

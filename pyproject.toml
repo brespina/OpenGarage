@@ -11,7 +11,13 @@ keywords = ["testing", "linting", "losing my mind"]
 package-mode = false  # THIS WAS WHAT TOOK ME 7 HOURSSSSSSSS!
 
 [tool.poetry.dependencies]
-python = "^3.9"
+# yt-dlp dropped Python 3.9, so 3.10 is the floor (3.11+ recommended).
+python = "^3.10"
+# yt-dlp is intentionally unpinned: YouTube breaks older releases often,
+# so this tool should always resolve to the latest version.
+yt-dlp = "*"
+# ffmpeg-python powers the video_convertors tools (webm->mp4, mp4->gif).
+ffmpeg-python = "*"
 
 [tool.poetry.dev-dependencies]
 black = "24.10.0"

@@ -26,6 +26,8 @@ OpenGarage currently plans to offer a collection of simple utilities that i alre
 - **video file converters:**
   - mp4 to gif converter
   - webm to mp4 converter
+- **downloaders:**
+  - youtube to mp3 (audio extractor)
 - **encoding tools:**
   - run-length encoding (rle) utility
 - **..coming soon!**
@@ -77,25 +79,23 @@ poetry install
 
 ### 4. run a tool
 
-here are examples of how to use one of the tools on different operating systems:
+heads up: these tools use relative imports, so run them **as modules from the repo root** (don't `cd` into the tool folder). on windows use `python`, on macOS/linux use `python3`. the result lands in that tool's own `output/` folder.
+
+> **ffmpeg required:** the audio/video tools shell out to [ffmpeg](https://ffmpeg.org/download.html), so it needs to be installed and on your PATH. check with `ffmpeg -version`.
 
 #### convert a .webm to .mp4
 
-##### running tool in windows
-
 ```bash
-cd tools\video_converters\webm_to_mp4
-python webm_to_mp4.py -ip c:\absolute\path\to\input\video.webm -of output_name.mp4
+python -m tools.video_convertors.webm_to_mp4.webm_to_mp4 -ip /absolute/path/to/input/video.webm -of output_name.mp4
 ```
 
-##### running tool in macOS and linux
+#### extract audio from a youtube video to .mp3
 
 ```bash
-cd tools/video_converters/webm_to_mp4
-python3 webm_to_mp4.py -ip /absolute/path/to/input/video.webm -of output_name.mp4
+python -m tools.downloaders.youtube_to_mp3.youtube_to_mp3 "https://www.youtube.com/watch?v=VIDEO_ID" -q 192
 ```
 
-the result will be placed in the respective child output folder.
+the mp3 saves into the tool's own `output/` folder by default; pass `-o /some/dir` to pick a different one, and `-q` sets the bitrate in kbps (e.g. 128, 192, 320). run any tool with `-h` to see all its options.
 
 ---
 
@@ -105,12 +105,18 @@ the result will be placed in the respective child output folder.
 OpenGarage/
 │
 ├── tools/
+│    ├── downloaders/
+│    │   ├── yt_convertor.py
+│    │   └── youtube_to_mp3/
+│    │       ├── youtube_to_mp3.py
+│    │       └── output/
+│    │
 │    ├── encoders/
 │    │   └── rle_encoder/
 │    │       ├── rle_encoder.py
 │    │       └── output/
 │    │
-│    └── video_converters/
+│    └── video_convertors/
 │        ├── ffm_convertor.py
 │        ├── mp4_to_gif/
 │        │   ├── mp4_to_gif.py
@@ -120,11 +126,12 @@ OpenGarage/
 │            ├── webm_to_mp4.py
 │            └── output/
 │
-├── venv/                       # virtual environment folder
+├── .venv/                      # virtual environment folder
 │
-├── license                     # mit license
-├── readme.md
+├── LICENSE                     # mit license
+├── README.md
 ├── pyproject.toml
+├── poetry.lock
 ├── .gitignore
 └── .pre-commit-config.yaml
 ```

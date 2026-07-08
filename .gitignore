@@ -6,6 +6,9 @@
 *.mp4
 *.gif
 
+# extracted audio from youtube_to_mp3
+*.mp3
+
 venv/
 # add more as we grow
 .vscode/
@@ -15,3 +18,10 @@ venv/
 
 __pycache__/
 */__pycache__/
+
+.venv
+
+# ignore everything generated inside any output/ folder,
+# but keep the folder itself tracked via its .gitkeep
+**/output/*
+!**/output/.gitkeep
